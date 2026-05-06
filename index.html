@@ -1196,6 +1196,46 @@
         margin: 0 1.5rem;
       }
     }
+
+    .pdf-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .pdf-modal.active {
+      display: flex;
+    }
+
+    .pdf-modal-content {
+      width: 90%;
+      height: 90%;
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #pdfViewer {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -1209,7 +1249,7 @@
     <div class="nav-logo">Argen Seltzer</div>
     <ul class="nav-center">
       <li><a href="#about" data-i18n="nav.about">Nosotros</a></li>
-      <li><a href="#why" data-i18n="nav.why">¿Por qué?</a></li>
+      <li><a href="#why" data-i18n="nav.why">Ventajas</a></li>
       <li><a href="#pricing" data-i18n="nav.pricing">Precios</a></li>
       <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contacto</a></li>
     </ul>
@@ -1236,8 +1276,8 @@
         límites.
       </p>
       <div class="hero-cta">
-        <a href="#pricing" class="btn-primary" data-i18n="hero.cta1">Ver precios</a>
-        <a href="#contact" class="btn-secondary" data-i18n="hero.cta2">Contactar ↗</a>
+        <button onclick="openPDF()" class="btn-primary" data-i18n="pdf.button">Carta de presentación</button>
+        <a href="#contact" class="btn-secondary" data-i18n="hero.cta2">Contactar</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
@@ -1611,6 +1651,15 @@
   </footer>
 
   <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setLang('es', document.querySelector('.lang-btn.active'));
+      document.getElementById("pdfModal").addEventListener("click", (e) => {
+        if (e.target.id === "pdfModal") {
+          closePDF();
+        }
+      });
+    });
     // ── i18n DICTIONARY ──
     const i18n = {
       es: {
@@ -1621,7 +1670,7 @@
         "hero.tag": "Miami & Broward — Delivery incluido",
         "hero.subtitle": "El auténtico sifón argentino, ahora en el corazón de South Florida. Tradición, calidad y efervescencia sin límites.",
         "hero.cta1": "Ver precios",
-        "hero.cta2": "Contactar ↗",
+        "hero.cta2": "Contactar",
         "hero.stat1": "Presión constante",
         "hero.stat2": "Zonas de entrega",
         "hero.stat3": "Contratos largos",
@@ -1683,7 +1732,8 @@
         "contact.subtitle": "¿Listo para el auténtico sifón argentino? Contactanos hoy.",
         "contact.phone.label": "Teléfono",
         "contact.coverage.label": "Cobertura",
-        "contact.coverage.text": "Delivery incluido en Miami & Broward"
+        "contact.coverage.text": "Delivery incluido en Miami & Broward",
+        "pdf.button": "Carta de presentación"
       },
       en: {
         "nav.about": "About",
@@ -1693,7 +1743,7 @@
         "hero.tag": "Miami & Broward — Delivery included",
         "hero.subtitle": "The authentic Argentine siphon, now in the heart of South Florida. Tradition, quality, and endless effervescence.",
         "hero.cta1": "See pricing",
-        "hero.cta2": "Contact ↗",
+        "hero.cta2": "Contact",
         "hero.stat1": "Constant pressure",
         "hero.stat2": "Delivery zones",
         "hero.stat3": "Long contracts",
@@ -1755,7 +1805,8 @@
         "contact.subtitle": "Ready for the authentic Argentine siphon? Contact us today.",
         "contact.phone.label": "Phone",
         "contact.coverage.label": "Coverage",
-        "contact.coverage.text": "Delivery included across Miami & Broward"
+        "contact.coverage.text": "Delivery included across Miami & Broward",
+        "pdf.button": "Company profile"
       }
     };
 
@@ -1818,7 +1869,35 @@
         setTimeout(() => el.classList.add('visible'), 80);
       });
     }
+
+    function openPDF() {
+      const file = currentLang === 'es'
+        ? 'docs/carta_presentacion.pdf'
+        : 'docs/company_profile.pdf';
+
+      const modal = document.getElementById("pdfModal");
+      const viewer = document.getElementById("pdfViewer");
+
+      viewer.src = file;
+      modal.classList.add("active");
+    }
+
+    function closePDF() {
+      const modal = document.getElementById("pdfModal");
+      const viewer = document.getElementById("pdfViewer");
+
+      viewer.src = "";
+      modal.classList.remove("active");
+    }
+    
   </script>
+
+  <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <button class="pdf-close" onclick="closePDF()">✕</button>
+      <iframe id="pdfViewer"></iframe>
+    </div>
+  </div>
 </body>
 
 </html>
