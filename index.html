@@ -348,7 +348,22 @@
     .showcase-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "origin destination"
+        "product product";
       gap: 1rem;
+    }
+
+    .origin-card {
+      grid-area: origin;
+    }
+
+    .destination-card {
+      grid-area: destination;
+    }
+
+    .siphon-card {
+      grid-area: product;
     }
 
     .showcase-card {
@@ -381,7 +396,6 @@
     }
 
     .showcase-card.siphon-card {
-      grid-column: 1 / -1;
       flex-direction: row;
       gap: 2rem;
       padding: 1.8rem 2.5rem;
@@ -1268,7 +1282,7 @@
     <div class="hero-content">
       <div class="hero-tag">
         <span class="dot"></span>
-        <span data-i18n="hero.tag">Miami &amp; Broward — Delivery incluido</span>
+        <span data-i18n="hero.tag">Miami, Broward &amp; Palm Beach — Delivery incluido</span>
       </div>
       <h1 class="hero-title">ARGEN<br><span class="accent">SELTZER</span></h1>
       <p class="hero-subtitle" data-i18n="hero.subtitle">
@@ -1285,7 +1299,7 @@
           <div class="stat-label" data-i18n="hero.stat1">Presión constante</div>
         </div>
         <div class="stat">
-          <div class="stat-num">2</div>
+          <div class="stat-num">3</div>
           <div class="stat-label" data-i18n="hero.stat2">Zonas de entrega</div>
         </div>
         <div class="stat">
@@ -1300,7 +1314,7 @@
       <div class="showcase-grid">
 
         <!-- Argentine Flag -->
-        <div class="showcase-card" style="--accent:#74ACDF;">
+        <div class="showcase-card origin-card" style="--accent:#74ACDF;">
           <div class="card-svg-wrap">
             <svg viewBox="0 0 120 80" width="110" height="73" xmlns="http://www.w3.org/2000/svg">
               <rect width="120" height="80" rx="8" fill="#74ACDF" />
@@ -1346,55 +1360,8 @@
           <div class="card-desc" data-i18n="card.arg.desc">Argentina</div>
         </div>
 
-        <!-- Wine bottle -->
-        <div class="showcase-card" style="--accent:#8B1A3A;">
-          <div class="card-svg-wrap">
-            <svg viewBox="0 0 60 110" width="52" height="96" xmlns="http://www.w3.org/2000/svg">
-              <!-- Cork -->
-              <rect x="24" y="6" width="12" height="8" rx="2.5" fill="#c8a060" />
-              <!-- Neck -->
-              <rect x="24" y="14" width="12" height="16" rx="1" fill="#245518" />
-              <!-- Shoulder -->
-              <path d="M24 30 Q18 36 16 44 L16 95 Q16 100 22 100 L38 100 Q44 100 44 95 L44 44 Q42 36 36 30Z"
-                fill="#2d6a1f" />
-              <!-- Label -->
-              <rect x="18" y="60" width="24" height="26" rx="3" fill="#f5f0e0" />
-              <rect x="20" y="62" width="20" height="4" rx="1" fill="#8B1A3A" />
-              <text x="30" y="73" text-anchor="middle" font-size="4.5" fill="#8B1A3A" font-family="serif"
-                font-weight="bold">MALBEC</text>
-              <rect x="21" y="78" width="18" height="1.5" rx="1" fill="#8B1A3A" opacity=".4" />
-              <rect x="22" y="81" width="16" height="1.5" rx="1" fill="#8B1A3A" opacity=".3" />
-              <!-- Shine -->
-              <path d="M19 38 Q17 55 17 72" stroke="rgba(255,255,255,.22)" stroke-width="2" fill="none"
-                stroke-linecap="round" />
-              <!-- Ring at neck base -->
-              <rect x="22" y="28" width="16" height="3" rx="1.5" fill="#20420f" />
-            </svg>
-          </div>
-          <div class="card-label" data-i18n="card.wine.label">Maridaje</div>
-          <div class="card-desc" data-i18n="card.wine.desc">Malbec</div>
-        </div>
-
-        <!-- Soda Siphon — full width featured -->
-        <div class="showcase-card siphon-card" style="--accent:#2ecc52;">
-          <div class="card-svg-wrap" style="width:90px;height:90px;">
-            <svg viewBox="-25 -100 150 375" style="width:90px;height:90px; fill:#2ecc52;">
-              <path
-                d="M63.7,12.9l-0.5-0.2V3.3h3.4v-20.7c0-8.9-5.6-13.2-8.9-15l-0.4-0.2v-18.2l0.3-0.3c1.8-1.4,3.1-3.2,3.9-5.3c2.4,3.1,5.7,5.5,9.5,6.9c2.2,0.8,4.6,1.2,6.9,1.2c3.1,0,6.2-0.7,9-2.1c0.9-0.4,1.2-1.5,0.8-2.3c-0.3-0.6-0.9-1-1.6-1c-0.3,0-0.5,0.1-0.8,0.2c-2.4,1.1-4.9,1.7-7.5,1.7c-1.9,0-3.9-0.3-5.7-1c-4.4-1.5-7.9-4.7-9.9-8.8c-0.5-6.4-5.7-11.4-12.2-11.4c-6.8,0-12.3,5.5-12.3,12.3c0,3.8,1.7,7.4,4.8,9.7l0.3,0.3v15C28-31.6,14.7-22.5,5.4-9.9C4.8-9.2,4.9-8.1,5.7-7.5l8.7,7c0.3,0.2,0.7,0.4,1.1,0.4l0.2,0c0.5-0.1,0.9-0.3,1.2-0.7C21.4-7,27.1-12,33.5-15.9V3.3h3.4v9.4l-0.5,0.2C29,15.7,5,27.1,5,53.8l0,117.6c0,1,0.8,1.8,1.8,1.8h86.5c1,0,1.8-0.8,1.8-1.8V53.8C95,27.1,71,15.7,63.7,12.9z"
-                fill="currentColor" />
-            </svg>
-
-            </svg>
-          </div>
-          <div>
-            <div class="card-label" data-i18n="card.siphon.label">Nuestro producto</div>
-            <div class="card-desc" data-i18n="card.siphon.desc">Sifón de soda argentino con presión constante y
-              efervescencia perfecta en cada disparo.</div>
-          </div>
-        </div>
-
         <!-- US Flag -->
-        <div class="showcase-card" style="--accent:#B22234;">
+        <div class="showcase-card destination-card" style="--accent:#B22234;">
           <div class="card-svg-wrap">
             <svg viewBox="0 0 120 80" width="110" height="73" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -1432,6 +1399,26 @@
           <div class="card-label" data-i18n="card.us.label">Destino</div>
           <div class="card-desc" data-i18n="card.us.desc">South Florida</div>
         </div>
+
+        <!-- Soda Siphon — full width featured -->
+        <div class="showcase-card siphon-card" style="--accent:#2ecc52;">
+          <div class="card-svg-wrap" style="width:90px;height:90px;">
+            <svg viewBox="-25 -100 150 375" style="width:90px;height:90px; fill:#2ecc52;">
+              <path
+                d="M63.7,12.9l-0.5-0.2V3.3h3.4v-20.7c0-8.9-5.6-13.2-8.9-15l-0.4-0.2v-18.2l0.3-0.3c1.8-1.4,3.1-3.2,3.9-5.3c2.4,3.1,5.7,5.5,9.5,6.9c2.2,0.8,4.6,1.2,6.9,1.2c3.1,0,6.2-0.7,9-2.1c0.9-0.4,1.2-1.5,0.8-2.3c-0.3-0.6-0.9-1-1.6-1c-0.3,0-0.5,0.1-0.8,0.2c-2.4,1.1-4.9,1.7-7.5,1.7c-1.9,0-3.9-0.3-5.7-1c-4.4-1.5-7.9-4.7-9.9-8.8c-0.5-6.4-5.7-11.4-12.2-11.4c-6.8,0-12.3,5.5-12.3,12.3c0,3.8,1.7,7.4,4.8,9.7l0.3,0.3v15C28-31.6,14.7-22.5,5.4-9.9C4.8-9.2,4.9-8.1,5.7-7.5l8.7,7c0.3,0.2,0.7,0.4,1.1,0.4l0.2,0c0.5-0.1,0.9-0.3,1.2-0.7C21.4-7,27.1-12,33.5-15.9V3.3h3.4v9.4l-0.5,0.2C29,15.7,5,27.1,5,53.8l0,117.6c0,1,0.8,1.8,1.8,1.8h86.5c1,0,1.8-0.8,1.8-1.8V53.8C95,27.1,71,15.7,63.7,12.9z"
+                fill="currentColor" />
+            </svg>
+
+            </svg>
+          </div>
+          <div>
+            <div class="card-label" data-i18n="card.siphon.label">Nuestro producto</div>
+            <div class="card-desc" data-i18n="card.siphon.desc">Sifón de soda argentino con presión constante y
+              efervescencia perfecta en cada disparo.</div>
+          </div>
+        </div>
+
+        
 
       </div>
     </div>
@@ -1646,7 +1633,7 @@
         "nav.why": "¿Por qué?",
         "nav.pricing": "Precios",
         "nav.contact": "Contacto",
-        "hero.tag": "Miami & Broward — Delivery incluido",
+        "hero.tag": "Miami, Broward & Palm Beach — Delivery incluido",
         "hero.subtitle": "El auténtico sifón argentino, ahora en el corazón de South Florida. Tradición, calidad y efervescencia sin límites.",
         "hero.cta1": "Ver precios",
         "hero.cta2": "Contactar",
@@ -1719,7 +1706,7 @@
         "nav.why": "Why Us?",
         "nav.pricing": "Pricing",
         "nav.contact": "Contact",
-        "hero.tag": "Miami & Broward — Delivery included",
+        "hero.tag": "Miami, Broward & Palm Beach — Delivery included",
         "hero.subtitle": "The authentic Argentine siphon, now in the heart of South Florida. Tradition, quality, and endless effervescence.",
         "hero.cta1": "See pricing",
         "hero.cta2": "Contact",
