@@ -1160,10 +1160,6 @@ footer {
     gap: 3rem;
   }
 
-  .hero-visual {
-    display: none;
-  }
-
   section {
     padding: 5rem 1.5rem;
   }
@@ -1238,4 +1234,119 @@ footer {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 6.5rem 1rem 3rem;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+    line-height: .9;
+  }
+
+  .hero-subtitle {
+    font-size: .95rem;
+    max-width: 100%;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+
+  .section-title,
+  .contact-title {
+    line-height: 1;
+  }
+
+  .section-number {
+    display: none;
+  }
+
+  .contact-methods {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-card {
+    min-width: unset;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .coverage {
+    width: 100%;
+    border-radius: 16px;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .pricing-tabs {
+    width: 100%;
+  }
+
+  .tab {
+    flex: 1;
+    padding: .8rem 1rem;
+  }
+
+  .residential-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .price-main {
+    font-size: 4.5rem;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  iframe,
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+svg {
+  max-width: 100%;
 }
