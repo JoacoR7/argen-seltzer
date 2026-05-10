@@ -1145,6 +1145,15 @@ footer {
 }
 
 @media (max-width:768px) {
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "origin"
+      "destination"
+      "product";
+  }
+  
   nav {
     padding: 1rem 1.5rem;
   }
