@@ -5,6 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
       closePDF();
     }
   });
+
+  document.getElementById("instagram-card").addEventListener("click", () => {
+    window.open("https://instagram.com/argenseltzer", "_blank");
+  });
+
+  document.getElementById("whatsapp-card").addEventListener("click", () => {
+
+    const mensaje = currentLang === 'es'
+        ? 'Hola! Vengo de la página web, me gustaría más información sobre los sifones.'
+        : "Hi! I'm coming from the website, I'd like more information about the siphons.";
+
+    const url = `https://wa.me/17869825969?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+  });
 });
 
 let currentLang = 'es';

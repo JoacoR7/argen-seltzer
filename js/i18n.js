@@ -70,7 +70,7 @@ const i18n = {
     "contact.subtitle": "¿Listo para el auténtico sifón argentino? Contactanos hoy.",
     "contact.phone.label": "Teléfono",
     "contact.coverage.label": "Cobertura",
-    "contact.coverage.text": "Delivery incluido en Miami & Broward",
+    "contact.coverage.text": "Delivery incluido en Miami, Broward & Palm Beach",
     "pdf.button": "Carta de presentación"
   },
   en: {
@@ -143,7 +143,7 @@ const i18n = {
     "contact.subtitle": "Ready for the authentic Argentine siphon? Contact us today.",
     "contact.phone.label": "Phone",
     "contact.coverage.label": "Coverage",
-    "contact.coverage.text": "Delivery included across Miami & Broward",
+    "contact.coverage.text": "Delivery included across Miami, Broward & Palm Beach",
     "pdf.button": "Company profile"
   }
 };
