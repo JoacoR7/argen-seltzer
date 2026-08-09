@@ -306,3 +306,50 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
         "_blank"
     );
 });
+
+// ── GIFT SIPHONS ORDER (Regalo de sifones) ──
+const GIFT_PRICE = 30.00;
+
+const giftQuantityInput = document.getElementById("giftQuantity");
+const giftOrderTotalEl = document.getElementById("giftOrderTotal");
+function updateGiftTotal() {
+  if (!giftQuantityInput || !giftOrderTotalEl) return;
+  const q = Number(giftQuantityInput.value) || 0;
+  giftOrderTotalEl.textContent = `$${(q * GIFT_PRICE).toFixed(2)}`;
+}
+if (giftQuantityInput) giftQuantityInput.addEventListener('input', updateGiftTotal);
+updateGiftTotal();
+
+const giftOrderForm = document.getElementById("giftOrderForm");
+if (giftOrderForm) {
+  giftOrderForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("giftName").value;
+    const email = document.getElementById("giftEmail").value;
+    const location = document.getElementById("giftLocation").value;
+    const quantity = Number(document.getElementById("giftQuantity").value);
+    const total = (quantity * GIFT_PRICE).toFixed(2);
+
+    const msgHeading = i18n[currentLang]["orderGift.message.heading"] || 'New gift siphon order';
+    const nameLabel = i18n[currentLang]["orderGift.message.nameLabel"] || 'Name:';
+    const emailLabel = i18n[currentLang]["orderGift.message.emailLabel"] || 'Email:';
+    const locationLabel = i18n[currentLang]["orderGift.message.locationLabel"] || 'Location:';
+    const quantityLabel = i18n[currentLang]["orderGift.message.quantityLabel"] || 'Quantity:';
+    const totalLabel = i18n[currentLang]["orderGift.message.totalLabel"] || 'Total:';
+    const deliveryNote = i18n[currentLang]["orderGift.message.deliveryNote"] || 'Delivery will be quoted separately.';
+
+    let message = `${msgHeading}\n\n` +
+      `${nameLabel} ${name}\n\n` +
+      `${emailLabel} ${email}\n\n` +
+      `${locationLabel} ${location}\n\n` +
+      `${quantityLabel} ${quantity}\n\n` +
+      `${totalLabel} $${total}\n\n` +
+      `${deliveryNote}`;
+
+    window.open(
+        `https://wa.me/17869825969?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+  });
+}

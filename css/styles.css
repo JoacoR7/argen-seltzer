@@ -164,6 +164,23 @@ nav {
   transform: translateY(-1px);
 }
 
+.nav-catalog {
+  background: transparent;
+  color: var(--green) !important;
+  border: 1px solid rgba(46, 204, 82, .6);
+  padding: .55rem 1.4rem;
+  border-radius: 2px;
+  font-weight: 600 !important;
+  transition: background .3s, color .3s, border-color .3s, transform .2s !important;
+}
+
+.nav-catalog:hover {
+  background: var(--green);
+  color: var(--black) !important;
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -903,6 +920,85 @@ section {
   color: var(--green);
   font-family: 'Syne', sans-serif;
   font-weight: 600;
+}
+
+/* CATALOG / PRODUCT MENU */
+.catalog {
+  background: var(--black);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.catalog-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+}
+
+.catalog-card:hover {
+  border-color: rgba(46, 204, 82, .3);
+  transform: translateY(-6px);
+}
+
+.catalog-card-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.catalog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.catalog-card:hover .catalog-card-image img {
+  transform: scale(1.05);
+}
+
+.catalog-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
+  flex: 1;
+}
+
+.catalog-card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.catalog-card-desc {
+  font-size: .88rem;
+  color: var(--gray);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.catalog-card-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.6rem;
+  color: var(--green);
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* CONTACT */

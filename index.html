@@ -22,8 +22,9 @@
     <div class="nav-logo">Argen Seltzer</div>
     <ul class="nav-center">
       <li><a href="#about" data-i18n="nav.about">Nosotros</a></li>
-      <li><a href="#why" data-i18n="nav.why">Ventajas</a></li>
+      <li><a href="#why" data-i18n="nav.why">Beneficios</a></li>
       <li><a href="#pricing" data-i18n="nav.pricing">Precios</a></li>
+      <li><a href="#catalog" class="nav-catalog" data-i18n="nav.catalog">Catálogo</a></li>
       <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contacto</a></li>
     </ul>
     <div class="nav-right">
@@ -328,6 +329,43 @@
 
   <div class="divider"></div>
 
+  <!-- CATALOG / PRODUCT MENU -->
+  <section class="catalog" id="catalog">
+    <div class="section-number">04</div>
+    <div class="section-tag" data-i18n="catalog.tag">Catálogo</div>
+    <h2 class="section-title reveal" data-i18n="catalog.title">NUESTRO<br>CATÁLOGO</h2>
+
+    <div class="catalog-grid">
+
+      <div class="catalog-card reveal reveal-delay-1">
+        <div class="catalog-card-image">
+          <img class="lightbox-img" src="images/ServicioSifones/siphon-main.png" alt="Cajón de sifones">
+        </div>
+        <div class="catalog-card-body">
+          <h3 class="catalog-card-title" data-i18n="catalog.p1.title">Cajón de sifones</h3>
+          <p class="catalog-card-desc" data-i18n="catalog.p1.desc">Servicio de 8 sifones recargables de 1.5 L (50 oz) con delivery incluido en Miami y Broward.</p>
+          <div class="catalog-card-price">$28</div>
+          <a href="#order" class="btn-primary" data-i18n="catalog.p1.cta">Hacer pedido</a>
+        </div>
+      </div>
+
+      <div class="catalog-card reveal reveal-delay-2">
+        <div class="catalog-card-image">
+          <img class="lightbox-img" src="images/RegaloSifones/presentacion_1.png" alt="Sifón de regalo">
+        </div>
+        <div class="catalog-card-body">
+          <h3 class="catalog-card-title" data-i18n="catalog.p2.title">Sifón de regalo</h3>
+          <p class="catalog-card-desc" data-i18n="catalog.p2.desc">El clásico sifón argentino, ideal para regalar. Precio por unidad — el delivery se cotiza aparte.</p>
+          <div class="catalog-card-price">$30</div>
+          <a href="#orderGift" class="btn-primary" data-i18n="catalog.p2.cta">Hacer pedido</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-glow"></div>
@@ -365,7 +403,7 @@
 
   <section class="order" id="order">
 
-    <div class="section-number">04</div>
+    <div class="section-number">05</div>
     <div class="section-tag" data-i18n="order.tag">Hacer un pedido</div>
 
     <h2 class="section-title reveal" data-i18n="order.title">
@@ -378,13 +416,13 @@
       <div class="order-product reveal">
 
         <div class="order-image">
-          <img class="lightbox-img" src="images/siphon-main.png" alt="Argen Seltzer">
+          <img class="lightbox-img" src="images/ServicioSifones/siphon-main.png" alt="Argen Seltzer">
         </div>
 
         <div class="order-thumbs">
-          <img class="video-thumb" data-video-src="videos/muestra-sifon.mp4" src="images/siphon-glass.png" alt="Video de muestra">
-          <img class="lightbox-img" src="images/siphon-crates.jpeg" alt="">
-          <img class="lightbox-img" src="images/siphon-crate.jpeg" alt="">
+          <img class="video-thumb" data-video-src="videos/muestra-sifon.mp4" src="images/ServicioSifones/siphon-glass.png" alt="Video de muestra">
+          <img class="lightbox-img" src="images/ServicioSifones/siphon-crates.jpeg" alt="">
+          <img class="lightbox-img" src="images/ServicioSifones/siphon-crate.jpeg" alt="">
           
         </div>
 
@@ -496,6 +534,91 @@
           <div class="order-total">
             <span data-i18n="order.total.label">Total</span>
             <strong id="orderTotal">$28.00</strong>
+          </div>
+
+          <button class="btn-primary" type="submit" data-i18n="order.submit">
+            Enviar por WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- GIFT SIPHONS CATALOG -->
+  <section class="order" id="orderGift">
+
+    <div class="section-number">06</div>
+    <div class="section-tag" data-i18n="orderGift.tag">Regalo de sifones</div>
+
+    <h2 class="section-title reveal" data-i18n="orderGift.title">
+      SIFONES<br>DE REGALO
+    </h2>
+
+    <div class="order-grid">
+
+      <!-- PRODUCTO -->
+      <div class="order-product reveal">
+
+        <div class="order-image">
+          <img class="lightbox-img" src="images/RegaloSifones/presentacion_1.png" alt="Sifón de regalo">
+        </div>
+
+        <div class="order-thumbs">
+          <img class="lightbox-img" src="images/RegaloSifones/presentacion_2.png" alt="">
+          <img class="lightbox-img" src="images/RegaloSifones/presentacion_3.png" alt="">
+          <img class="lightbox-img" src="images/RegaloSifones/Sifones-argentina.png" alt="">
+        </div>
+
+        <div class="order-info">
+
+          <div class="price-main">$30</div>
+
+          <div class="price-unit" data-i18n="orderGift.product.unit">
+            por sifón de regalo
+          </div>
+
+          <ul class="price-features">
+            <li data-i18n="orderGift.f1">Ideal para regalar</li>
+            <li data-i18n="orderGift.f2">Presión constante</li>
+            <li data-i18n="orderGift.delivery">El delivery se cotiza aparte</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="order-form reveal">
+
+        <form id="giftOrderForm">
+
+          <h3 class="form-section-title" data-i18n="orderGift.personalData.title">Tus datos</h3>
+
+          <div class="form-row">
+            <input id="giftName" type="text" placeholder="Nombre" data-i18n-placeholder="orderGift.name.placeholder" required>
+            <input id="giftEmail" type="email" placeholder="Email" data-i18n-placeholder="orderGift.email.placeholder" required>
+          </div>
+
+          <input id="giftLocation" type="text" placeholder="Ubicación" data-i18n-placeholder="orderGift.location.placeholder" required>
+
+          <div class="form-field">
+            <label for="giftQuantity" data-i18n="orderGift.quantity.label">Cantidad de sifones</label>
+            <input id="giftQuantity" type="number" min="1" value="1" data-i18n-placeholder="orderGift.quantity.placeholder">
+          </div>
+
+          <div class="deposit-note" style="margin-top:1rem;" data-i18n="orderGift.deliveryNote">
+            🚚 El delivery se cotiza aparte
+          </div>
+
+          <div class="order-total">
+            <span data-i18n="order.total.label">Total</span>
+            <strong id="giftOrderTotal">$30.00</strong>
           </div>
 
           <button class="btn-primary" type="submit" data-i18n="order.submit">
