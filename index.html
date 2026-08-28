@@ -9,7 +9,13 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260828-2">
+  <style>
+    /* Critical fallback: keeps the site hidden while the maintenance CSS loads. */
+    body.maintenance-mode > :not(.maintenance-screen) { display: none !important; }
+    body.maintenance-mode { margin: 0; min-height: 100vh; overflow: hidden; background: #0d0d0d; }
+    body.maintenance-mode .maintenance-screen { min-height: 100vh; }
+  </style>
 </head>
 
 <body class="maintenance-mode">
