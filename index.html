@@ -12,7 +12,24 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="maintenance-mode">
+
+  <!-- Temporary maintenance screen. Remove `maintenance-mode` from <body> to restore the site. -->
+  <main class="maintenance-screen" aria-labelledby="maintenance-title">
+    <div class="maintenance-brand">Argen Seltzer</div>
+    <div class="maintenance-content">
+      <span class="maintenance-dot" aria-hidden="true"></span>
+      <p class="maintenance-eyebrow">Estamos preparando algo especial</p>
+      <h1 id="maintenance-title">En mantenimiento</h1>
+      <div class="maintenance-line" aria-hidden="true"></div>
+      <p class="maintenance-en" lang="en">Under maintenance</p>
+      <p class="maintenance-message">
+        Volveremos pronto.<br>
+        <span lang="en">We'll be back soon.</span>
+      </p>
+    </div>
+    <div class="maintenance-footer">Miami &amp; Broward · South Florida</div>
+  </main>
 
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>

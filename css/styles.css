@@ -29,6 +29,110 @@ body {
   cursor: none;
 }
 
+/* TEMPORARY MAINTENANCE SCREEN
+   Remove `maintenance-mode` from <body> in index.html to restore the full site. */
+body.maintenance-mode {
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  cursor: auto;
+}
+
+body.maintenance-mode > :not(.maintenance-screen) {
+  display: none !important;
+}
+
+.maintenance-screen {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(46, 204, 82, .12), transparent 30rem),
+    var(--black);
+}
+
+.maintenance-screen::after {
+  content: '';
+  position: absolute;
+  width: min(55vw, 42rem);
+  aspect-ratio: 1;
+  right: -18%;
+  bottom: -40%;
+  border: 1px solid rgba(46, 204, 82, .18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5rem rgba(46, 204, 82, .025), 0 0 0 10rem rgba(46, 204, 82, .015);
+  pointer-events: none;
+}
+
+.maintenance-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--green);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.maintenance-content {
+  width: min(100%, 58rem);
+  align-self: center;
+}
+
+.maintenance-dot {
+  display: block;
+  width: .65rem;
+  height: .65rem;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 1.5rem rgba(46, 204, 82, .65);
+}
+
+.maintenance-eyebrow,
+.maintenance-footer {
+  color: var(--gray);
+  font-size: clamp(.68rem, 1.5vw, .8rem);
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.maintenance-content h1 {
+  margin-top: .75rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4.5rem, 13vw, 10rem);
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+}
+
+.maintenance-line {
+  width: min(100%, 42rem);
+  height: 1px;
+  margin: clamp(1.75rem, 4vw, 3rem) 0;
+  background: linear-gradient(90deg, var(--green), rgba(46, 204, 82, 0));
+}
+
+.maintenance-en {
+  color: var(--green);
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.maintenance-message {
+  margin-top: 1.25rem;
+  color: var(--gray);
+  font-size: clamp(.9rem, 2vw, 1.05rem);
+  line-height: 1.7;
+}
+
 /* CURSOR */
 .cursor {
   width: 12px;
